@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style & Glow | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <a class="brand" href="index.html"><span class="brand-mark">S<span>&G</span></span><span class="brand-name">style <b>& glow</b></span></a>
+    <nav><a href="index.html">Customer storefront</a></nav>
+  </header>
+  <main class="admin-main">
+    <div class="admin-title"><div><p class="eyebrow">STORE MANAGEMENT</p><h1>Admin dashboard</h1><p>Manage the sample product catalogue and inventory.</p></div><a class="primary-button" href="index.html">View customer site →</a></div>
+    <section class="admin-stats" aria-label="Inventory summary">
+      <article><span>Total products</span><strong id="totalProducts">0</strong></article>
+      <article><span>Total units in stock</span><strong id="totalStock">0</strong></article>
+      <article><span>Low stock items</span><strong id="lowStock">0</strong></article>
+    </section>
+    <section class="admin-panel">
+      <div class="panel-heading"><div><p class="eyebrow">PRODUCT CRUD</p><h2 id="formTitle">Add a product</h2></div></div>
+      <form id="productForm" class="product-form">
+        <input type="hidden" id="productId">
+        <label>Product name<input id="productName" required maxlength="70" placeholder="e.g. Cotton kurta"></label>
+        <label>Category<select id="productCategory" required><option value="clothing">Clothing</option><option value="beauty">Beauty</option><option value="accessories">Accessories</option></select></label>
+        <label>Type<input id="productType" required placeholder="e.g. ethnic, skincare, bags"></label>
+        <label>Price (₹)<input id="productPrice" type="number" min="1" required></label>
+        <label>Quantity in stock<input id="productQty" type="number" min="0" required></label>
+        <label>Image URL<input id="productImage" type="url" placeholder="https://..."></label>
+        <div class="form-actions"><button class="primary-button" type="submit" id="saveButton">Add product</button><button class="secondary-button" type="reset" id="cancelEdit" hidden>Cancel edit</button></div>
+      </form>
+    </section>
+    <section class="admin-panel">
+      <div class="panel-heading"><div><p class="eyebrow">CURRENT CATALOGUE</p><h2>Products & inventory</h2></div><input class="table-search" id="adminSearch" type="search" placeholder="Search products"></div>
+      <div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="productRows"></tbody></table></div>
+      <p class="admin-note">Demo note: changes are saved in this browser using LocalStorage. Firebase, secure admin login, customer credit limits, orders and reports will be added in later steps. This is not production security.</p>
+    </section>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

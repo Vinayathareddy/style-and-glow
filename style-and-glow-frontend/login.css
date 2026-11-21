@@ -1,0 +1,199 @@
+
+.login-body {
+  min-height: 100vh;
+  background: #f8f3f0;
+  font-family: "DM Sans", sans-serif;
+  color: #302522;
+}
+
+.login-header {
+  height: 85px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.back-link {
+  color: #79564d;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-container {
+  min-height: calc(100vh - 85px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  padding: 42px;
+  border-radius: 18px;
+  box-shadow: 0 12px 45px rgba(70, 40, 30, 0.09);
+}
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-heading .eyebrow {
+  color: #a87968;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.login-heading h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.login-heading > p:last-child {
+  color: #887b75;
+  font-size: 14px;
+}
+
+.login-role {
+  display: flex;
+  background: #f7f1ee;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 26px;
+}
+
+.role-button {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #79665f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.role-button.active {
+  background: #8c5d50;
+  color: white;
+  box-shadow: 0 3px 8px rgba(70, 40, 30, 0.12);
+}
+
+#loginForm > label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+
+#loginForm input[type="email"],
+.password-field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #e6dcd7;
+  border-radius: 8px;
+  outline: none;
+  font: inherit;
+  font-size: 14px;
+  background: #fff;
+}
+
+#loginForm input:focus {
+  border-color: #a87968;
+  box-shadow: 0 0 0 3px rgba(168, 121, 104, 0.12);
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 65px;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #8c5d50;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.login-options a,
+.register-link a {
+  color: #986858;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-submit {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background: #8c5d50;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-submit:hover {
+  background: #70483e;
+}
+
+.login-message {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.register-link {
+  text-align: center;
+  color: #887b75;
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+@media (max-width: 520px) {
+  .login-header {
+    padding: 0 20px;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+
+  .login-heading h1 {
+    font-size: 30px;
+  }
+}

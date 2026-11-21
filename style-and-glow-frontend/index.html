@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Style & Glow — clothing, beauty and accessories for everyday style.">
+  <title>Style & Glow | Clothing, Beauty & Accessories</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Style and Glow home">
+      <span class="brand-mark">S<span>&</span>G</span>
+      <span class="brand-name">style <b>&</b> glow</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#clothing">Clothing</a>
+      <a class="nav-link" href="#beauty">Beauty</a>
+      <a class="nav-link" href="#accessories">Accessories</a>
+      <a class="nav-link" href="login.html">Login</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="search-box" aria-label="Search products">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search products">
+      </label>
+
+      <button class="icon-button" id="wishlistButton" type="button" aria-label="Wishlist">♡</button>
+
+      <button class="icon-button cart-trigger" id="cartButton" type="button" aria-label="Open cart">
+        ♧ <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR STYLE, YOUR STORY</p>
+        <h1>Find your<br><em>everyday</em> style.</h1>
+        <p class="hero-description">
+          Clothing, beauty and little details that make you feel like you.
+        </p>
+
+        <a class="primary-button" href="#shop">
+          Explore the collection <span>→</span>
+        </a>
+
+        <div class="hero-note">
+          <span class="note-line"></span>
+          Made for every side of you
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85"
+          alt="Friends browsing a clothing collection"
+        >
+        <div class="hero-sticker">
+          Style<br>that feels<br><i>like you.</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section section-wrap" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE YOUR STYLE</p>
+          <h2>Shop by category</h2>
+        </div>
+        <p>Find something you'll love, whatever your style looks like.</p>
+      </div>
+
+      <div class="category-grid">
+        <a class="category-card category-clothing" href="#clothing">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Clothing collection">
+          <span class="category-overlay">
+            <small>01 / STYLE</small>
+            <strong>Clothing</strong>
+            <span>Explore clothing →</span>
+          </span>
+        </a>
+
+        <a class="category-card" href="#beauty">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Beauty products">
+          <span class="category-overlay">
+            <small>02 / CARE</small>
+            <strong>Beauty</strong>
+            <span>Explore beauty →</span>
+          </span>
+        </a>
+
+        <a class="category-card" href="#accessories">
+          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80" alt="Jewellery and accessories">
+          <span class="category-overlay">
+            <small>03 / DETAILS</small>
+            <strong>Accessories</strong>
+            <span>Explore accessories →</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="products-section section-wrap" id="clothing">
+      <div class="section-heading product-heading">
+        <div>
+          <p class="eyebrow">DRESS YOUR WAY</p>
+          <h2>Clothing</h2>
+        </div>
+        <a class="text-link" href="#shop">Back to categories ↑</a>
+      </div>
+
+      <div class="filter-row" data-filter-group="clothing">
+        <button class="filter-chip selected" data-filter="all">All clothing</button>
+        <button class="filter-chip" data-filter="ethnic">Indian ethnic</button>
+        <button class="filter-chip" data-filter="western">Western wear</button>
+        <button class="filter-chip" data-filter="kids">Kids wear</button>
+      </div>
+
+      <div class="product-grid" id="clothingProducts"></div>
+    </section>
+
+    <section class="beauty-section" id="beauty">
+      <div class="section-wrap">
+        <div class="section-heading product-heading">
+          <div>
+            <p class="eyebrow">A LITTLE SELF-CARE</p>
+            <h2>Beauty</h2>
+          </div>
+          <a class="text-link" href="#shop">Back to categories ↑</a>
+        </div>
+
+        <div class="filter-row" data-filter-group="beauty">
+          <button class="filter-chip selected" data-filter="all">All beauty</button>
+          <button class="filter-chip" data-filter="makeup">Makeup</button>
+          <button class="filter-chip" data-filter="skincare">Skincare</button>
+          <button class="filter-chip" data-filter="haircare">Haircare</button>
+        </div>
+
+        <div class="product-grid" id="beautyProducts"></div>
+      </div>
+    </section>
+
+    <section class="products-section section-wrap" id="accessories">
+      <div class="section-heading product-heading">
+        <div>
+          <p class="eyebrow">THE FINISHING TOUCH</p>
+          <h2>Accessories</h2>
+        </div>
+        <a class="text-link" href="#shop">Back to categories ↑</a>
+      </div>
+
+      <div class="filter-row" data-filter-group="accessories">
+        <button class="filter-chip selected" data-filter="all">All accessories</button>
+        <button class="filter-chip" data-filter="jewellery">Jewellery</button>
+        <button class="filter-chip" data-filter="bags">Bags</button>
+        <button class="filter-chip" data-filter="footwear">Footwear</button>
+        <button class="filter-chip" data-filter="other">Other</button>
+      </div>
+
+      <div class="product-grid" id="accessoriesProducts"></div>
+    </section>
+
+    <section class="newsletter-section">
+      <div>
+        <p class="eyebrow">STAY IN THE LOOP</p>
+        <h2>A little style inspiration<br>in your inbox.</h2>
+      </div>
+
+      <form id="newsletterForm" class="newsletter-form">
+        <label class="visually-hidden" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe <span>→</span></button>
+        <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-mark">S<span>&</span>G</span>
+      <span class="brand-name">style <b>&</b> glow</span>
+    </a>
+
+    <p>Everyday fashion, beauty and accessories.</p>
+
+    <div class="footer-links">
+      <a href="#clothing">Clothing</a>
+      <a href="#beauty">Beauty</a>
+      <a href="#accessories">Accessories</a>
+      <a href="login.html">Login</a>
+    </div>
+
+    <small>
+      © <span id="currentYear"></span> Style & Glow. Demo website for learning purposes.
+    </small>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h2>Your cart</h2>
+      </div>
+      <button class="close-button" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <span>♡</span>
+      <h3>Your cart is waiting</h3>
+      <p>Add something you love and it'll show up here.</p>
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">₹0</strong>
+      </div>
+
+      <p>Shipping and taxes will be calculated later.</p>
+
+      <button class="primary-button checkout-button" id="checkoutButton" type="button">
+        Continue to Checkout →
+      </button>
+
+      <small>Pay by Cash on Delivery at checkout.</small>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="checkout-modal" hidden>
+    <div class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button type="button" id="closeCheckout" class="close-button" aria-label="Close checkout">×</button>
+
+      <p class="eyebrow">ALMOST YOURS</p>
+      <h2 id="checkoutTitle">Complete your order</h2>
+      <p>Enter your delivery details and choose Cash on Delivery.</p>
+
+      <form id="checkoutForm">
+        <label for="customerName">Full name</label>
+        <input id="customerName" name="customerName" type="text" autocomplete="name" required maxlength="80">
+
+        <label for="customerPhone">Phone number</label>
+        <input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number" required>
+
+        <label for="deliveryAddress">Delivery address</label>
+        <textarea id="deliveryAddress" name="deliveryAddress" rows="4" autocomplete="street-address" required maxlength="500" placeholder="House number, street, area, city, PIN code"></textarea>
+
+        <div class="checkout-payment">
+          <h3>Payment method</h3>
+          <label>
+            <input type="radio" name="paymentMethod" value="Cash on Delivery" checked>
+            Cash on Delivery (COD)
+          </label>
+          <p>Pay in cash when your order is delivered.</p>
+        </div>
+
+        <div class="checkout-total">
+          <span>Order total</span>
+          <strong id="checkoutTotal">₹0</strong>
+        </div>
+
+        <button class="primary-button" id="placeOrderButton" type="submit">
+          Place Order
+        </button>
+
+        <p id="checkoutMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MESSAGE -->
+  <div id="orderSuccess" class="checkout-modal" hidden>
+    <div class="checkout-panel" role="alertdialog" aria-modal="true" aria-labelledby="successTitle">
+      <p class="eyebrow">THANK YOU FOR SHOPPING</p>
+      <h2 id="successTitle">Order placed successfully!</h2>
+      <p>Your order has been received. Pay by Cash on Delivery when it arrives.</p>
+      <p>Order ID: <strong id="successOrderId"></strong></p>
+      <button type="button" id="successContinueButton" class="primary-button">Continue Shopping</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

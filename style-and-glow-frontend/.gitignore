@@ -1,0 +1,27 @@
+
+# Dependencies
+node_modules/
+
+# Private Firebase Admin SDK files
+admin-security/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Service account credentials
+*service-account*.json
+*serviceAccount*.json
+*-adminsdk-*.json
+
+# Private keys
+*.pem
+*.key
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/

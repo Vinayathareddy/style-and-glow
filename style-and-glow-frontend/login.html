@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | Style & Glow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: #302326;
+    }
+
+    .login-header {
+      height: 75px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #302326;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #9d6572;
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+    }
+
+    .brand-mark span {
+      color: #f5dce2;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    .brand-name b {
+      color: #9d6572;
+    }
+
+    .back-link {
+      color: #806b70;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .login-page {
+      min-height: calc(100vh - 75px);
+      padding: 45px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 10% 10%, #f5dfe4 0, transparent 35%),
+        radial-gradient(circle at 90% 90%, #ead9cf 0, transparent 35%),
+        #faf6f2;
+    }
+
+    .login-layout {
+      width: 100%;
+      max-width: 1000px;
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 65px rgba(72, 45, 47, 0.12);
+    }
+
+    .login-visual {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 45px 38px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(45, 25, 31, 0.12), rgba(45, 25, 31, 0.78)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85")
+        center / cover;
+    }
+
+    .visual-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .visual-brand span {
+      color: #f2c9d2;
+    }
+
+    .visual-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.2;
+      margin: 0 0 15px;
+    }
+
+    .visual-content p {
+      max-width: 320px;
+      color: #f5e9e9;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .visual-bottom {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f5dfe4;
+    }
+
+    .login-form-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px clamp(25px, 5vw, 65px);
+    }
+
+    .login-heading {
+      margin-bottom: 25px;
+    }
+
+    .eyebrow {
+      color: #a66d79;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      margin-bottom: 10px;
+    }
+
+    .login-heading h1 {
+      color: #302326;
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+
+    .login-heading p:last-child {
+      color: #898083;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .role-label {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .role-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .role-button {
+      height: 45px;
+      border: 1px solid #e8dfe1;
+      border-radius: 9px;
+      background: #fdfbfb;
+      color: #786a6e;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .role-button.active {
+      background: #9d6572;
+      border-color: #9d6572;
+      color: white;
+    }
+
+    #loginForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #loginForm label {
+      color: #493d40;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    #loginForm input[type="email"],
+    #loginForm input[type="password"],
+    #loginForm input[type="text"] {
+      width: 100%;
+      height: 49px;
+      padding: 0 15px;
+      border: 1px solid #e8dfe1;
+      border-radius: 9px;
+      background: #fdfbfb;
+      color: #302326;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    #loginForm input:focus {
+      border-color: #bd8290;
+      box-shadow: 0 0 0 3px rgba(189, 130, 144, 0.12);
+    }
+
+    #loginForm input::placeholder {
+      color: #b2a8aa;
+    }
+
+    .password-field {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-field input {
+      padding-right: 65px !important;
+    }
+
+    #togglePassword {
+      position: absolute;
+      right: 13px;
+      border: none;
+      background: transparent;
+      color: #a66d79;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .login-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 12px 0;
+      font-size: 12px;
+    }
+
+    .remember-option {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #786a6e;
+    }
+
+    .remember-option input {
+      accent-color: #9d6572;
+    }
+
+    #forgotPassword {
+      color: #9d6572;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .login-submit {
+      width: 100%;
+      min-height: 50px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 9px;
+      background: #9d6572;
+      color: white;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .login-submit:hover {
+      background: #80515d;
+      transform: translateY(-1px);
+    }
+
+    .login-message {
+      min-height: 18px;
+      color: #a34c5c;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .register-link {
+      margin-top: 15px;
+      text-align: center;
+      color: #898083;
+      font-size: 13px;
+    }
+
+    .register-link a {
+      color: #9d6572;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .login-header {
+        padding: 0 18px;
+      }
+
+      .login-page {
+        padding: 20px 14px;
+      }
+
+      .login-layout {
+        max-width: 460px;
+        grid-template-columns: 1fr;
+      }
+
+      .login-visual {
+        min-height: 180px;
+        padding: 25px;
+      }
+
+      .visual-content h2 {
+        font-size: 29px;
+        margin-top: 25px;
+      }
+
+      .visual-content p,
+      .visual-bottom {
+        display: none;
+      }
+
+      .login-form-area {
+        padding: 35px 25px;
+      }
+
+      .login-heading h1 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="login-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S<span>&G</span></span>
+      <span class="brand-name">style <b>& glow</b></span>
+    </a>
+
+    <a href="index.html" class="back-link">
+      ← Back to Store
+    </a>
+  </header>
+
+  <main class="login-page">
+
+    <section class="login-layout">
+
+      <div class="login-visual">
+
+        <div class="visual-brand">
+          style <span>& glow</span>
+        </div>
+
+        <div class="visual-content">
+          <h2>Welcome to Your Style Destination.</h2>
+          <p>
+            Discover fashion, beauty and accessories
+            that make every moment feel special.
+            Your style journey starts here.
+          </p>
+        </div>
+
+        <div class="visual-bottom">
+          Your Style. Your Story.
+        </div>
+
+      </div>
+
+      <div class="login-form-area">
+
+        <div class="login-heading">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h1>Sign In</h1>
+          <p>Sign in to continue your shopping experience.</p>
+        </div>
+
+        <p class="role-label">Choose account type</p>
+
+        <div class="role-selector">
+          <button
+            type="button"
+            class="role-button active"
+            data-role="customer"
+          >
+            Customer
+          </button>
+
+          <button
+            type="button"
+            class="role-button"
+            data-role="admin"
+          >
+            Admin
+          </button>
+        </div>
+
+        <form id="loginForm">
+
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+          >
+
+          <label for="password">Password</label>
+
+          <div class="password-field">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+            <button type="button" id="togglePassword">Show</button>
+          </div>
+
+          <div class="login-options">
+            <label class="remember-option">
+              <input type="checkbox" id="rememberMe">
+              Remember me
+            </label>
+
+            <a href="#" id="forgotPassword">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="login-submit">
+            Login
+          </button>
+
+          <p id="loginMessage" class="login-message"></p>
+
+        </form>
+
+        <div class="register-link">
+          New to Style & Glow?
+          <a href="register.html">Create an account</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script type="module" src="login.js"></script>
+
+</body>
+</html>
